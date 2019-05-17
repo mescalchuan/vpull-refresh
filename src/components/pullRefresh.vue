@@ -32,7 +32,7 @@ export default {
         },
         pullHeight: {
             type: String,
-            default: "100vh"
+            default: "auto"
         },
         pullTip: {
             type: String,
@@ -116,6 +116,9 @@ export default {
         position: relative;
         overflow-y: auto;
     }
+	.pull-refresh::-webkit-scrollbar {
+		display: none;
+	}
     .pull-con {
         height: 100%;
     }
