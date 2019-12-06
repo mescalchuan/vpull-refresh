@@ -19,6 +19,7 @@ refreshTip | 刷新中的提示文字 | string | `正在刷新`
 <template>
 <pull-refresh :refreshing="isRefreshing" :on-refresh="onRefresh" pull-height="400px">
   <div class="list">
+    <button @click="onRefresh">手动刷新</button>
     <p v-for="n in 20">{{n}}</p>
   </div>
 </pull-refresh>
@@ -39,7 +40,7 @@ import pullRefresh from "@/components/pullRefresh.vue";
         this.isRefreshing = true;
         setTimeout(() => {
           this.isRefreshing = false;
-        }, 5000)
+        }, 2000)
       }
     },
     components: { pullRefresh }
@@ -50,11 +51,21 @@ import pullRefresh from "@/components/pullRefresh.vue";
 .list {
   background-color: white;
 }
+button {
+  border: 0;
+  background-color: #ff4f4f;
+  color: white;
+  padding: 5px 10px;
+  display: block;
+  margin: 20px auto;
+}
 p {
   margin: 0;
 }
 </style>
 ```
+
+![](./example.gif)
 
 #### 手动刷新
 ```

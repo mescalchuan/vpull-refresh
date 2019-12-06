@@ -2,7 +2,7 @@
     <div>
         <pull-refresh :refreshing="isRefreshing" :on-refresh="onRefresh" pull-height="400px">
             <div class="list">
-                <button @click="open">手动刷新</button>
+                <button @click="onRefresh">手动刷新</button>
                 <ul>
                     <li v-for="n in 20">goodsId -- {{n}}</li>
                 </ul>
@@ -25,13 +25,7 @@ export default {
             this.isRefreshing = true;
             setTimeout(() => {
                 this.isRefreshing = false;
-            }, 5000)
-        },
-        open() {
-            this.isRefreshing = true;
-            setTimeout(() => {
-                this.isRefreshing = false;
-            }, 5000)
+            }, 2000)
         }
     },
     components: {
